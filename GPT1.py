@@ -17,7 +17,7 @@ eval_interval = 200
 learning_rate = 2e-4
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 eval_iters = 200
-encoder = 'base' 
+encoder = 'tiktoken' 
 n_head = 6
 n_layers = 6
 Dropout = 0.2  # Adjust dropout rate as needed
@@ -27,6 +27,7 @@ with open('input.txt', 'r', encoding='utf-8') as f:
     text = f.read()
 
 if encoder == 'tiktoken':
+  import tiktoken
   enc = tiktoken.get_encoding("o200k_base")
   assert enc.decode(enc.encode("hello world")) == "hello world"
   vocab_size = len(enc)
