@@ -1,0 +1,6 @@
+services:
+  gptrebuilt:
+    image: gptrebuilt
+    build:
+      context: .
+      dockerfile: ./Dockerfile
