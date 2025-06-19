@@ -30,7 +30,7 @@ if encoder == 'tiktoken':
   import tiktoken
   enc = tiktoken.get_encoding("o200k_base")
   assert enc.decode(enc.encode("hello world")) == "hello world"
-  vocab_size = len(enc)
+  vocab_size = 50257
 
 
   data = torch.tensor(enc.encode(text), dtype=torch.long)
